@@ -25,7 +25,7 @@ export default function Register({navigation}: Props) {
   return (
     <SafeAreaView>
       <StatusBar />
-      <View style={styles.login}>
+      <View style={styles.register}>
         <Text style={styles.title}>Join the Earth Broadband</Text>
         <Text style={styles.description}>Enjoy fast speed internet </Text>
         <View>
@@ -62,8 +62,12 @@ export default function Register({navigation}: Props) {
 }
 
 const styles = StyleSheet.create({
-  login: {
+  register: {
     padding: 16,
+    backgroundColor: 'white',
+    height: '100%',
+    width: '100%',
+    flexDirection: 'column',
   },
   title: {
     fontSize: 24,

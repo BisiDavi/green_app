@@ -24,7 +24,7 @@ export default function SplashScreenView({navigation}: Props) {
 
   return (
     <SafeAreaView>
-      <View style={styles.login}>
+      <View style={styles.splashScreen}>
         <View style={styles.logoWrapper}>
           <Image
             source={{
@@ -58,7 +58,7 @@ export default function SplashScreenView({navigation}: Props) {
 }
 
 const styles = StyleSheet.create({
-  login: {
+  splashScreen: {
     backgroundColor: '#eceaf8',
     flexDirection: 'column',
     height: '100%',

@@ -67,6 +67,10 @@ export default function Login({navigation}: Props) {
 const styles = StyleSheet.create({
   login: {
     padding: 16,
+    backgroundColor: 'white',
+    height: '100%',
+    width: '100%',
+    flexDirection: 'column',
   },
   title: {
     fontSize: 30,
