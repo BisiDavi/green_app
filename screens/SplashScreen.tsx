@@ -17,12 +17,9 @@ export default function SplashScreenView({navigation}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   function onNavigateHandler(buttonIndex: number) {
+    const navigationIndex = buttonIndex === 0 ? 'Register' : 'Login';
+    navigation.navigate(navigationIndex);
     setSelectedIndex(buttonIndex);
-    if (buttonIndex === 1) {
-      navigation.navigate('Login');
-    } else if (buttonIndex === 0) {
-      navigation.navigate('Register');
-    }
   }
 
   return (
@@ -52,8 +49,8 @@ export default function SplashScreenView({navigation}: Props) {
           textStyle={styles.buttonGroupText}
           selectedTextStyle={styles.selectedButtonText}
           buttonContainerStyle={styles.buttonContainerStyle}
-          onPress={onNavigateHandler}
           innerBorderStyle={styles.innerBorderStyle}
+          onPress={onNavigateHandler}
         />
       </View>
     </SafeAreaView>

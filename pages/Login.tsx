@@ -6,12 +6,12 @@ import {StatusBar, SafeAreaView, View, Text, StyleSheet} from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type RootStackParamList = {
-  SplashScreenView: undefined | any;
+  Login: undefined | any;
   Register: undefined;
   Home: undefined;
 };
 
-type Props = NativeStackScreenProps<RootStackParamList, 'SplashScreenView'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 export default function Login({navigation}: Props) {
   function onRegisterHandler() {

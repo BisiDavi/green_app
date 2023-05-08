@@ -3,7 +3,24 @@ import {Button, Input} from '@rneui/base';
 // import {Icon} from '@rneui/themed';
 import {StatusBar, SafeAreaView, View, Text, StyleSheet} from 'react-native';
 
-export default function Register() {
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  Login: undefined | any;
+  Register: undefined;
+  Home: undefined;
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Register'>;
+
+export default function Register({navigation}: Props) {
+  function onRegisterHandler() {
+    navigation.navigate('Home');
+  }
+
+  function onLoginHandler() {
+    navigation.navigate('Login');
+  }
   return (
     <SafeAreaView>
       <StatusBar />
@@ -26,6 +43,7 @@ export default function Register() {
             title="Register"
             buttonStyle={styles.buttonStyle}
             containerStyle={styles.buttonContainerStyle}
+            onPress={onRegisterHandler}
           />
           <View style={styles.registerView}>
             <Text style={styles.text}>Have an account?</Text>
@@ -33,6 +51,7 @@ export default function Register() {
               title="Login"
               buttonStyle={styles.registerButton}
               titleStyle={styles.registerButtonStyle}
+              onPress={onLoginHandler}
             />
           </View>
         </View>
