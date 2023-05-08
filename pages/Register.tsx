@@ -1,13 +1,14 @@
 import React from 'react';
 import {Button, Input} from '@rneui/base';
 // import {Icon} from '@rneui/themed';
-import {StatusBar, SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import {StatusBar, View, Text, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type RootStackParamList = {
-  Login: undefined | any;
-  Register: undefined;
+  Register: undefined | any;
+  Login: undefined;
   Home: undefined;
 };
 
