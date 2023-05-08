@@ -41,7 +41,11 @@ export default function App(): JSX.Element {
           component={Register}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Home" component={Home} options={{title: ''}} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
