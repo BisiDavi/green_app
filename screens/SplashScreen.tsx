@@ -8,6 +8,7 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 type RootStackParamList = {
   SplashScreenView: undefined | any;
   Login: undefined;
+  Register: undefined;
 };
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SplashScreenView'>;
@@ -19,6 +20,8 @@ export default function SplashScreenView({navigation}: Props) {
     setSelectedIndex(buttonIndex);
     if (buttonIndex === 1) {
       navigation.navigate('Login');
+    } else if (buttonIndex === 0) {
+      navigation.navigate('Register');
     }
   }
 
