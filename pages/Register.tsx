@@ -3,33 +3,13 @@ import {Button, Input} from '@rneui/base';
 // import {Icon} from '@rneui/themed';
 import {StatusBar, SafeAreaView, View, Text, StyleSheet} from 'react-native';
 
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-
-type RootStackParamList = {
-  SplashScreenView: undefined | any;
-  Register: undefined;
-  Home: undefined;
-};
-
-type Props = NativeStackScreenProps<RootStackParamList, 'SplashScreenView'>;
-
-export default function Login({navigation}: Props) {
-  function onRegisterHandler() {
-    navigation.navigate('Register');
-  }
-
-  function onLoginHandler() {
-    navigation.navigate('Home');
-  }
-
+export default function Register() {
   return (
     <SafeAreaView>
       <StatusBar />
       <View style={styles.login}>
-        <Text style={styles.title}>Welcome Smith 👋</Text>
-        <Text style={styles.description}>
-          View details about your internet connectivity
-        </Text>
+        <Text style={styles.title}>Join the Earth Broadband</Text>
+        <Text style={styles.description}>Enjoy fast speed internet </Text>
         <View>
           <Input
             placeholder="Email"
@@ -43,18 +23,16 @@ export default function Login({navigation}: Props) {
             containerStyle={styles.inputContainer}
           />
           <Button
-            title="Login"
+            title="Register"
             buttonStyle={styles.buttonStyle}
             containerStyle={styles.buttonContainerStyle}
-            onPress={onLoginHandler}
           />
           <View style={styles.registerView}>
-            <Text style={styles.text}>Not a member?</Text>
+            <Text style={styles.text}>Have an account?</Text>
             <Button
-              title="Register now"
+              title="Login"
               buttonStyle={styles.registerButton}
               titleStyle={styles.registerButtonStyle}
-              onPress={onRegisterHandler}
             />
           </View>
         </View>
@@ -68,7 +46,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   title: {
-    fontSize: 30,
+    fontSize: 24,
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 30,
