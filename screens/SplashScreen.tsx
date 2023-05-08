@@ -1,39 +1,59 @@
+import {SafeAreaView} from 'react-native';
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import {ButtonGroup, Image} from '@rneui/base';
 
-export default function SplashScreenView() {
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  SplashScreenView: undefined | any;
+  Login: undefined;
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'SplashScreenView'>;
+
+export default function SplashScreenView({navigation}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  function onNavigateHandler(buttonIndex: number) {
+    setSelectedIndex(buttonIndex);
+    if (buttonIndex === 1) {
+      navigation.navigate('Login');
+    }
+  }
+
   return (
-    <View style={styles.login}>
-      <View style={styles.logoWrapper}>
-        <Image
-          source={{
-            uri: 'https://res.cloudinary.com/verrb-inc/image/upload/v1683493215/Earth_logo_dnpt6l.png',
-          }}
-          containerStyle={styles.logo}
+    <SafeAreaView>
+      <View style={styles.login}>
+        <View style={styles.logoWrapper}>
+          <Image
+            source={{
+              uri: 'https://res.cloudinary.com/verrb-inc/image/upload/v1683493215/Earth_logo_dnpt6l.png',
+            }}
+            containerStyle={styles.logo}
+          />
+        </View>
+        <View style={styles.textView}>
+          <Text style={styles.title}>Broadband that gives back</Text>
+          <Text style={styles.description}>
+            Fastest speeds, incredible customer service, trees planted monthly,
+            and plastic removed from our oceans.
+          </Text>
+        </View>
+        <ButtonGroup
+          buttons={['Register', 'Login']}
+          selectedIndex={selectedIndex}
+          containerStyle={styles.buttonGroup}
+          buttonStyle={styles.buttonStyle}
+          selectedButtonStyle={styles.selectedButton}
+          textStyle={styles.buttonGroupText}
+          selectedTextStyle={styles.selectedButtonText}
+          buttonContainerStyle={styles.buttonContainerStyle}
+          onPress={onNavigateHandler}
+          innerBorderStyle={styles.innerBorderStyle}
         />
       </View>
-      <View style={styles.textView}>
-        <Text style={styles.title}>Broadband that gives back</Text>
-        <Text style={styles.description}>
-          Fastest speeds, incredible customer service, trees planted monthly,
-          and plastic removed from our oceans.
-        </Text>
-      </View>
-      <ButtonGroup
-        buttons={['Register', 'Login']}
-        selectedIndex={selectedIndex}
-        containerStyle={styles.buttonGroup}
-        buttonStyle={styles.buttonStyle}
-        selectedButtonStyle={styles.selectedButton}
-        textStyle={styles.buttonGroupText}
-        selectedTextStyle={styles.selectedButtonText}
-        buttonContainerStyle={styles.buttonContainerStyle}
-        onPress={value => setSelectedIndex(value)}
-        innerBorderStyle={styles.innerBorderStyle}
-      />
-    </View>
+    </SafeAreaView>
   );
 }
 
