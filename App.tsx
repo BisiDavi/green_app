@@ -28,7 +28,7 @@ export default function App(): JSX.Element {
           component={SplashScreenView}
           options={{title: ''}}
         />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" component={Login} options={{title: ''}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

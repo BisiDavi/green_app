@@ -1,6 +1,6 @@
+import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
 import {View, Text, StyleSheet} from 'react-native';
-import React, {useState} from 'react';
 import {ButtonGroup, Image} from '@rneui/base';
 
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
